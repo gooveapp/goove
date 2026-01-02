@@ -35,6 +35,8 @@ func main() {
 	app.Use(middleware.Recover())
 	app.Use(middleware.Static("/static"))
 
+	app.Static("/static", "static")
+
 	homeHandler := handlers.HomeHandler{}
 
 	app.GET("/", homeHandler.HandleHome)

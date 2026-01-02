@@ -9,12 +9,18 @@ vet: fmt
 	go vet ./...
 	@echo "Code vetted."
 
+tailwind: ## Build Tailwind CSS
+	npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify
+
+tailwind-watch: ## Watch and rebuild Tailwind CSS
+	npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch
+
 templ:
 	templ generate
 	@echo "Templates generated."
 
 dev: templ ## Run with hot reload
-	air
+	make tailwind-watch & air
 	@echo "Starting development server..."
 
 test: vet ## Run tests

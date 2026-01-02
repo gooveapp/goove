@@ -39,3 +39,10 @@ tmp/
 # Data
 data/
 *.db
+
+# Node
+node_modules/
+package-lock.json
+
+# CSS
+static/css/output.css
