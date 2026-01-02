@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  goove:
+    build: .
+    container_name: goove
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - PORT=${PORT:-3000}
+      - ENV=${ENV:-production}
+      - DISCOGS_TOKEN=${DISCOGS_TOKEN}
+      - DISCOGS_USER_AGENT=${DISCOGS_USER_AGENT:-Goove/1.0}
+      - DATABASE_PATH=/data/goove.db
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - goove-data:/data
+      - ./static:/app/static:ro
+    restart: unless-stopped
+
+volumes:
+  goove-data:
+    driver: local

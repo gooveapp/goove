@@ -31,5 +31,11 @@ go.work.sum
 # .idea/
 # .vscode/
 
+# Build artifacts
+goove
 tmp/
 *_templ.go
+
+# Data
+data/
+*.db
