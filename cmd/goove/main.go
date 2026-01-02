@@ -5,6 +5,7 @@ import (
 
 	"github.com/gooveapp/goove/internal/config"
 	"github.com/gooveapp/goove/internal/database"
+	"github.com/gooveapp/goove/internal/handlers"
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -33,6 +34,10 @@ func main() {
 	app.Use(middleware.Logger())
 	app.Use(middleware.Recover())
 	app.Use(middleware.Static("/static"))
+
+	homeHandler := handlers.HomeHandler{}
+
+	app.GET("/", homeHandler.HandleHome)
 
 	log.Println("Goove is running on http://localhost:3000")
 	if err := app.Start(":3000"); err != nil {
