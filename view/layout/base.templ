@@ -2,15 +2,15 @@ package layout
 
 templ Base(title string) {
 	<!DOCTYPE html>
-	<html lang="en">
+	<html lang="en" class="dark">
 		<head>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<title>{ title } - Goove</title>
 			<link rel="stylesheet" href="/static/css/output.css"/>
-      <script src="/static/js/htmx.min.js"></script>
+			<script src="/static/js/htmx.min.js"></script>
 		</head>
-		<body class="bg-gray-50">
+		<body class="min-h-screen bg-background text-foreground antialiased">
 			{ children... }
 		</body>
 	</html>

@@ -5,10 +5,9 @@ import (
 
 	"github.com/gooveapp/goove/internal/config"
 	"github.com/gooveapp/goove/internal/database"
-	"github.com/gooveapp/goove/internal/handlers"
+	"github.com/gooveapp/goove/internal/http"
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
@@ -31,15 +30,7 @@ func main() {
 	// Initialize Echo web server
 	app := echo.New()
 
-	app.Use(middleware.Logger())
-	app.Use(middleware.Recover())
-	app.Use(middleware.Static("/static"))
-
-	app.Static("/static", "static")
-
-	homeHandler := handlers.HomeHandler{}
-
-	app.GET("/", homeHandler.HandleHome)
+	http.RegisterRoutes(app)
 
 	log.Println("Goove is running on http://localhost:3000")
 	if err := app.Start(":3000"); err != nil {

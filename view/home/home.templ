@@ -6,31 +6,31 @@ import (
 
 templ Home() {
   @layout.Base("Home") {
-<div class="min-h-screen flex flex-col">
-			<nav class="bg-white shadow-sm">
+		<div class="min-h-screen flex flex-col">
+			<nav class="border-b border-border bg-card">
 				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div class="flex justify-between h-16 items-center">
-						<h1 class="text-2xl font-bold text-gray-900">Goove</h1>
-						<div class="space-x-4">
-							<a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
-							<a href="/records" class="text-gray-700 hover:text-gray-900">Records</a>
-							<a href="/settings" class="text-gray-700 hover:text-gray-900">Settings</a>
+						<h1 class="text-2xl font-bold text-primary">Goove</h1>
+						<div class="flex items-center space-x-6">
+							<a href="/" class="text-foreground hover:text-primary transition-colors">Home</a>
+							<a href="/records" class="text-muted-foreground hover:text-primary transition-colors">Records</a>
+							<a href="/settings" class="text-muted-foreground hover:text-primary transition-colors">Settings</a>
 						</div>
 					</div>
 				</div>
 			</nav>
-			
-			<main class="flex-1">
+
+			<main class="flex-1 flex items-center justify-center">
 				<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 					<div class="text-center">
-						<h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-							Welcome to Goove
+						<h2 class="text-4xl font-extrabold text-foreground sm:text-5xl">
+							Welcome to <span class="text-primary">Goove</span>
 						</h2>
-						<p class="mt-4 text-xl text-gray-500">
+						<p class="mt-4 text-xl text-muted-foreground">
 							Your personal vinyl collection manager
 						</p>
 						<div class="mt-8">
-							<a href="/records/new" class="bg-indigo-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-indigo-700">
+							<a href="/records/new" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors">
 								Add Your First Record
 							</a>
 						</div>
