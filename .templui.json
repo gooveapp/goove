@@ -1,0 +1,7 @@
+{
+  "componentsDir": "view/components",
+  "utilsDir": "view/utils",
+  "moduleName": "github.com/gooveapp/goove",
+  "jsDir": "static/js",
+  "jsPublicPath": "static/js"
+}

@@ -5,6 +5,17 @@ vars:
     sh: command -v tailwindcss >/dev/null 2>&1 && echo "tailwindcss" || echo "npx tailwindcss@latest"
 
 tasks:
+  fmt:
+    desc: Run go format
+    cmds:
+      - go fmt ./...
+
+  vet:
+    deps: [fmt]
+    desc: Run go Vet
+    cmds:
+      - go vet ./...
+  
   templ:
     desc: Run templ with integrated server and hot reload
     cmds:
