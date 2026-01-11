@@ -6,9 +6,11 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
-// RegisterRoutes sets up the HTTP routes for the Echo server.
 func RegisterRoutes(e *echo.Echo) {
 	homeHandler := handlers.HomeHandler{}
+	recordHandler := handlers.RecordHandler{}
+	settingsHandler := handlers.SettingsHandler{}
+
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.Use(middleware.Static("/static"))
@@ -17,6 +19,10 @@ func RegisterRoutes(e *echo.Echo) {
 
 	e.GET("/", homeHandler.HandleHome)
 
-	e.GET("/records",)
-	e.GET("/settings",)
-}
+	records := e.Group("records")
+	records.GET("/", recordHandler.HandleRecords)
+	records.GET("/new", recordHandler.HandleRecordCreatePage)
+
+	settings := e.Group("settings")
+	settings.GET("/", settingsHandler.HandleSettings)
+ }

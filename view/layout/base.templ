@@ -11,7 +11,23 @@ templ Base(title string) {
 			<script src="/static/js/htmx.min.js"></script>
 		</head>
 		<body class="min-h-screen bg-background text-foreground antialiased">
+		<div class="min-h-screen flex flex-col">
+			<nav class="border-b border-border bg-card">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="flex justify-between h-16 items-center">
+						<h1 class="text-2xl font-bold text-primary">Goove</h1>
+						<div class="flex items-center space-x-6">
+							<a href="/" class="text-foreground hover:text-primary transition-colors">Home</a>
+							<a href="/records" class="text-muted-foreground hover:text-primary transition-colors">Records</a>
+							<a href="/settings" class="text-muted-foreground hover:text-primary transition-colors">Settings</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+
 			{ children... }
+
+		</div>
 		</body>
 	</html>
 }

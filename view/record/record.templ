@@ -1,0 +1,45 @@
+package record
+
+import (
+  "github.com/gooveapp/goove/view/layout"
+)
+
+templ RecordHome() {
+  @layout.Base("Records") {
+      <main class="flex-1 flex items-center justify-center">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-4xl font-extrabold text-foreground sm:text-5xl">
+              Your Vinyl Records
+            </h2>
+            <p class="mt-4 text-xl text-muted-foreground">
+              Browse and manage your vinyl collection
+            </p>
+            <div class="mt-8">
+              <a href="/records/new" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors">
+                Add New Record
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+  }
+}
+
+templ RecordCreatePage() {
+  @layout.Base("Add New Record") {
+      <main class="flex-1 flex items-center justify-center">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-4xl font-extrabold text-foreground sm:text-5xl">
+              Add a New Vinyl Record
+            </h2>
+            <p class="mt-4 text-xl text-muted-foreground">
+              Fill in the details to add a new record to your collection
+            </p>
+            <!-- Form for adding a new record would go here -->
+          </div>
+        </div>
+      </main>
+  }
+}

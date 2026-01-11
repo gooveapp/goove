@@ -1,0 +1,23 @@
+package settings
+
+
+import (
+  "github.com/gooveapp/goove/view/layout"
+)
+
+templ Settings() {
+  @layout.Base("Settings") {
+      <main class="flex-1 flex items-center justify-center">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-4xl font-extrabold text-foreground sm:text-5xl">
+              Settings
+            </h2>
+            <p class="mt-4 text-xl text-muted-foreground">
+              Manage your application preferences
+            </p>
+          </div>
+        </div>
+      </main>
+  }
+}
